@@ -3,12 +3,10 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 
 const mockProducts = [
@@ -125,136 +123,16 @@ const Index = () => {
             </nav>
 
             <div className="flex items-center gap-3">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon" className="relative">
-                    <Icon name="Bell" size={20} />
-                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent rounded-full text-xs flex items-center justify-center animate-pulse-slow">3</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent>
-                  <SheetHeader>
-                    <SheetTitle>Уведомления</SheetTitle>
-                    <SheetDescription>Новые события и сообщения</SheetDescription>
-                  </SheetHeader>
-                  <ScrollArea className="h-[calc(100vh-120px)] mt-6">
-                    <div className="space-y-4">
-                      <div className="p-4 bg-muted rounded-lg hover-scale cursor-pointer">
-                        <div className="flex items-start gap-3">
-                          <Icon name="MessageSquare" size={20} className="text-secondary mt-1" />
-                          <div>
-                            <p className="font-medium">Новое сообщение от ProGamer777</p>
-                            <p className="text-sm text-muted-foreground">Аккаунт готов к передаче</p>
-                            <p className="text-xs text-muted-foreground mt-1">5 минут назад</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 bg-muted rounded-lg hover-scale cursor-pointer">
-                        <div className="flex items-start gap-3">
-                          <Icon name="CheckCircle" size={20} className="text-green-500 mt-1" />
-                          <div>
-                            <p className="font-medium">Сделка завершена</p>
-                            <p className="text-sm text-muted-foreground">CS:GO Prime Account получен</p>
-                            <p className="text-xs text-muted-foreground mt-1">2 часа назад</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 bg-muted rounded-lg hover-scale cursor-pointer">
-                        <div className="flex items-start gap-3">
-                          <Icon name="Shield" size={20} className="text-primary mt-1" />
-                          <div>
-                            <p className="font-medium">Верификация одобрена</p>
-                            <p className="text-sm text-muted-foreground">Ваш аккаунт подтвержден</p>
-                            <p className="text-xs text-muted-foreground mt-1">1 день назад</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollArea>
-                </SheetContent>
-              </Sheet>
+              <Button variant="outline" size="icon" className="relative">
+                <Icon name="Bell" size={20} />
+                <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent rounded-full text-xs flex items-center justify-center animate-pulse-slow">3</span>
+              </Button>
 
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Avatar className="h-9 w-9 border-2 border-primary">
-                      <AvatarFallback className="bg-primary text-primary-foreground">JD</AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent>
-                  <SheetHeader>
-                    <SheetTitle>Профиль пользователя</SheetTitle>
-                    <SheetDescription>Управление аккаунтом и настройки</SheetDescription>
-                  </SheetHeader>
-                  <div className="mt-6 space-y-6">
-                    <div className="flex flex-col items-center gap-4">
-                      <Avatar className="h-24 w-24 border-4 border-primary neon-border">
-                        <AvatarFallback className="bg-primary text-primary-foreground text-3xl">JD</AvatarFallback>
-                      </Avatar>
-                      <div className="text-center">
-                        <h3 className="text-xl font-bold">JohnDoe_Pro</h3>
-                        <div className="flex items-center justify-center gap-2 mt-2">
-                          <Icon name="Star" size={16} className="text-yellow-500 fill-yellow-500" />
-                          <span className="font-medium">4.8</span>
-                          <span className="text-muted-foreground">(42 отзыва)</span>
-                        </div>
-                        <Badge className="mt-2 bg-green-500">
-                          <Icon name="ShieldCheck" size={14} className="mr-1" />
-                          Верифицирован
-                        </Badge>
-                      </div>
-                    </div>
-
-                    <Separator />
-
-                    <div className="space-y-2">
-                      <h4 className="font-semibold mb-3">Статистика</h4>
-                      <div className="grid grid-cols-2 gap-4">
-                        <Card>
-                          <CardContent className="p-4 text-center">
-                            <p className="text-2xl font-bold text-secondary">127</p>
-                            <p className="text-xs text-muted-foreground">Покупок</p>
-                          </CardContent>
-                        </Card>
-                        <Card>
-                          <CardContent className="p-4 text-center">
-                            <p className="text-2xl font-bold text-accent">43</p>
-                            <p className="text-xs text-muted-foreground">Продаж</p>
-                          </CardContent>
-                        </Card>
-                      </div>
-                    </div>
-
-                    <Separator />
-
-                    <div className="space-y-3">
-                      <h4 className="font-semibold">Последние сделки</h4>
-                      <ScrollArea className="h-48">
-                        {mockTransactions.map(tx => (
-                          <div key={tx.id} className="mb-3 p-3 bg-muted rounded-lg">
-                            <div className="flex justify-between items-start">
-                              <div>
-                                <p className="font-medium text-sm">{tx.item}</p>
-                                <p className="text-xs text-muted-foreground">{tx.date}</p>
-                              </div>
-                              <Badge variant={tx.status === 'completed' ? 'default' : 'secondary'}>
-                                {tx.status === 'completed' ? 'Завершена' : 'Активна'}
-                              </Badge>
-                            </div>
-                            <p className="text-sm font-bold text-primary mt-2">{tx.amount} ₽</p>
-                          </div>
-                        ))}
-                      </ScrollArea>
-                    </div>
-
-                    <Button className="w-full bg-primary hover:bg-primary/90">
-                      <Icon name="Settings" size={18} className="mr-2" />
-                      Настройки профиля
-                    </Button>
-                  </div>
-                </SheetContent>
-              </Sheet>
+              <Button variant="ghost" size="icon">
+                <Avatar className="h-9 w-9 border-2 border-primary">
+                  <AvatarFallback className="bg-primary text-primary-foreground">JD</AvatarFallback>
+                </Avatar>
+              </Button>
             </div>
           </div>
         </div>
@@ -419,7 +297,7 @@ const Index = () => {
                   </Badge>
                 </div>
               </CardHeader>
-              <ScrollArea className="flex-1 p-6">
+              <div className="flex-1 p-6 overflow-y-auto">
                 <div className="space-y-4">
                   <div className="flex gap-3">
                     <Avatar className="h-8 w-8">
@@ -449,7 +327,7 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-              </ScrollArea>
+              </div>
               <div className="border-t p-4">
                 <div className="flex gap-2">
                   <Input placeholder="Написать сообщение..." className="flex-1" />
